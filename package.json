@@ -10,6 +10,7 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
+    "firebase": "^9.18.0",
     "ol": "latest"
   }
 }
