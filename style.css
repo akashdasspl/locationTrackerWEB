@@ -10,3 +10,30 @@ html, body {
   bottom: 0;
   width: 100%;
 }
+.card {
+  /* position: absolute;
+  right: 0; */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #f0f0f0;
+  padding: 3px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-body {
+  padding: 3px;
+  background-color: #ccc;
+}
+
+.card-body p {
+  margin: 0;
+  font-size: 14px;
+}
