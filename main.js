@@ -1,5 +1,5 @@
 import "./style.css";
-import { Map, View } from "ol";
+import { Map, Overlay, View } from "ol";
 import TileLayer from "ol/layer/Tile";
 import VectorLayer from "ol/layer/Vector.js";
 import OSM from "ol/source/OSM";
@@ -21,6 +21,8 @@ onValue(starCountRef, (snapshot) => {
   var colors = ["blue", "purple", "red", "yellow"];
   var index = 0;
   for (var location in data) {
+ 
+    
     allLocation.push(
       new VectorLayer({
         source: new VectorSource({
@@ -59,4 +61,30 @@ onValue(starCountRef, (snapshot) => {
       zoom: 7,
     }),
   });
+
+    for (var location in data) {
+ 
+    
+    
+     var overlay = new Overlay({
+    position: fromLonLat([data[location].longitude, data[location].latitude]),
+    positioning: 'bottom-center',
+    element: document.createElement("div"),
+    stopEvent: false,
+  });
+
+  overlay.getElement().innerHTML = `<div class="card">
+ 
+  <div class="card-body">
+    <p><strong>Device Name:</strong>${data[location].Dname}</p>
+ 
+  </div>
+</div>`
+
+  overlay.getElement().style.fontSize = "16px";
+  map.addOverlay(overlay);
+    index = (index + 1) % 4;
+  }
+
+   
 });
