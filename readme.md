@@ -1,6 +1,8 @@
-# OpenLayers TrackLocation Web app
+# TrackLocation Web app
 
-This example demonstrates how the `ol` package can be used with [Vite](https://vitejs.dev/).
+This app is basically to show the Location of Mobile devices.
+
+In this app we use OpenLayer
 
 To get started, run the following (requires Node 14+):
 
