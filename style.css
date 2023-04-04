@@ -2,14 +2,30 @@
 
 html, body {
   margin: 0;
-  height: 100%;
+  height: 100vh;
 }
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
+.map {
+  
+  height: 100vh;
    
  
+}
+.info {
+  height: 100vh;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.con {
+  display: grid;
+  grid: 10fr 2fr;
+}
+
+.head {
+  text-align: center;
 }
 .card {
   /* position: absolute;
@@ -44,7 +60,7 @@ html, body {
   margin-bottom: 20px;
   padding: 20px;
  overflow: scroll;
- max-height: 86vh;
+ max-height: 90vh;
  
   
   

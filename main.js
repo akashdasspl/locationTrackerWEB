@@ -37,11 +37,15 @@ onValue(starCountRef, (snapshot) => {
  
  var color = ["blue", "purple", "red", "yellow"];
  var index = 0;
-
+var textcolor
 let text = "<div class=cardd>";
 for (let i = 1; i < entries.length; i++) {
 
- 
+ if (color[index] == "blue" || color[index] == "purple") {
+   textcolor = "white";
+ }else{
+  textcolor = "black";
+ }
  
 
    let p = entries[i][1].previousDATA.length
@@ -49,25 +53,25 @@ for (let i = 1; i < entries.length; i++) {
 
   text +=
     ` <div class=cardbox style=background-color:${color[index]}  > ` +
-    "<p><strong>Device Name:</strong>" +
+    `<p style = color:${textcolor}><strong>Device Name:</strong>` +
     entries[i][1].Dname +
     "</p>" +
-    "<p><strong>IP Address:</strong>" +
+    `<p style = color:${textcolor} ><strong>IP Address:</strong>` +
     entries[i][1].ip +
     "</p>" +
-    "<p><strong>longitude:</strong>" +
+    `<p style = color:${textcolor}><strong>longitude:</strong>` +
     entries[i][1].longitude +
     "</p>" +
-    "<p><strong>latitude:</strong>" +
+    `<p style = color:${textcolor}><strong>latitude:</strong>` +
     entries[i][1].latitude +
     "</p>" +
-    "<p><strong>previous latitude:</strong>" +
+    `<p style = color:${textcolor}><strong>previous latitude:</strong>` +
     entries[i][1].previousDATA[p - 1].latitude +
     "</p>" +
-    "<p><strong>previous longitude:</strong>" +
+    `<p style = color:${textcolor}><strong>previous longitude:</strong>` +
     entries[i][1].previousDATA[p - 1].longitude +
     "</p>" +
-    "<p><strong>time:</strong>" +
+    `<p style = color:${textcolor}><strong>time:</strong>` +
     entries[i][1].Currenttime +
     "</p>" +
     "</div>";
