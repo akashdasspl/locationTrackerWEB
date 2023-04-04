@@ -11,18 +11,47 @@
 
 <body>
   <div>
-    <!-- <div id="main">
-        <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
-      </div> -->
+    <div id="menu">
+      <button class="openbtn" onclick="openNav()">☰</button>
+    </div>
     <div class="con">
       <div id="map" class="map"></div>
       <div class="info" id="info">
-        <p class="head">All users</p>
-        <div id="demo"></div>
+        <div id="users">
+          <div id="closeDiv">
+            <p class="head">All users</p>
+            <div id="menu">
+              <button class="closeBtn" onclick="closeNav()">x</button>
+            </div>
+          </div>
+          <div id="demo"></div>
+        </div>
       </div>
     </div>
   </div>
   <script type="module" src="./main.js"></script>
+  <script>
+    const openNav = () => {
+      document.getElementById("users").style.display = "block";
+      document.getElementById("menu").style.display = "none";
+    };
+
+    const closeNav = () => {
+      function myFunction(x) {
+        if (x.matches) {
+          // If media query matches
+          document.getElementById("users").style.display = "none";
+          document.getElementById("menu").style.display = "block";
+        } else {
+          document.getElementById("users").style.display = "block";
+          document.getElementById("menu").style.display = "none";
+        }
+      }
+      var x = window.matchMedia("(max-width: 992px)");
+      myFunction(x);
+      x.addListener(myFunction);
+    };
+  </script>
 </body>
 
 </html>

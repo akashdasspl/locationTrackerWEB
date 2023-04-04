@@ -1,15 +1,15 @@
 @import "node_modules/ol/ol.css";
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100vh;
 }
+
 .map {
-  
   height: 100vh;
-   
- 
 }
+
 .info {
   height: 100vh;
   background-color: white;
@@ -27,44 +27,38 @@ html, body {
 .head {
   text-align: center;
 }
+
 .card {
   /* position: absolute;
   right: 0; */
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- 
+
   margin-bottom: 20px;
- 
- 
 }
+
 .cardbox {
-  /* position: absolute;
-  right: 0; */
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   margin-bottom: 20px;
   padding: 10px;
-   
-
 }
+
 .cardd {
-  /* position: absolute;
-  right: 0; */
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   margin-bottom: 20px;
   padding: 20px;
- overflow: scroll;
- max-height: 90vh;
- 
-  
-  
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 92vh;
 }
+
 .card-header {
   background-color: #f0f0f0;
   padding: 3px;
@@ -81,4 +75,61 @@ html, body {
 .card-body p {
   margin: 0;
   font-size: 14px;
+}
+
+#menu {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  #menu {
+    display: block;
+  }
+
+  #users {
+    display: none;
+  }
+
+  #menu {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  #closeDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+  }
+}
+
+@media only screen and (max-height: 718px) {
+  .cardd {
+    max-height: 90vh;
+  }
+}
+
+@media only screen and (max-height: 640px) {
+  .cardd {
+    max-height: 88vh;
+  }
+}
+
+@media only screen and (max-height: 540px) {
+  .cardd {
+    max-height: 86vh;
+  }
+}
+
+@media only screen and (max-height: 440px) {
+  .cardd {
+    max-height: 83vh;
+  }
+}
+
+@media only screen and (max-height: 340px) {
+  .cardd {
+    max-height: 80vh;
+  }
 }
