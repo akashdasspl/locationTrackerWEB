@@ -35,7 +35,18 @@ onValue(starCountRef, (snapshot) => {
  console.log(entries); 
 
  
- var color = ["blue", "purple", "yellow", "red","pink"];
+ var color = [
+   "blue",
+   "purple",
+   "yellow",
+   "red",
+   "pink",
+   "#FF2BF8",
+   "#17FF2E ",
+   "#8161FF",
+   "#B4BA7E ",
+   "#25BA20",
+ ];
  var ind = 0;
 var textcolor
 let text = "<div class=cardd>";
@@ -46,6 +57,7 @@ for (let i = entries.length-1; i >0; i--) {
  }else{
   textcolor = "black";
  }
+
  
 
    let p = entries[i][1].previousDATA.length
@@ -101,7 +113,18 @@ setTimeout(() => {
   console.log("fdsa", fdsa);
   setTimeout(() => {
     var allLocation = [];
-    var colors = [ "blue", "purple", "yellow","red","pink"];
+    var colors = [
+      "blue",
+      "purple",
+      "yellow",
+      "red",
+      "pink",
+      "Dpink",
+      "green",
+      "#8161FF",
+      "#B4BA7E ",
+      "#25BA20",
+    ];
     var index = 0;
 
     const tileLayer = new TileLayer({
