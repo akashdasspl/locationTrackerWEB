@@ -26,7 +26,7 @@ onValue(starCountRef, (snapshot) => {
   data = data1;
   
 
-
+//entries = Object.entries(data1);
  
   entries = Object.entries(data1);
  entries.sort((a, b) => {
@@ -35,13 +35,13 @@ onValue(starCountRef, (snapshot) => {
  console.log(entries); 
 
  
- var color = ["blue", "purple", "red", "yellow"];
- var index = 0;
+ var color = ["blue", "purple", "yellow", "red","pink"];
+ var ind = 0;
 var textcolor
 let text = "<div class=cardd>";
-for (let i = 1; i < entries.length; i++) {
+for (let i = entries.length-1; i >0; i--) {
 
- if (color[index] == "blue" || color[index] == "purple") {
+ if (color[i-1] == "blue" || color[i-1] == "purple") {
    textcolor = "white";
  }else{
   textcolor = "black";
@@ -49,10 +49,11 @@ for (let i = 1; i < entries.length; i++) {
  
 
    let p = entries[i][1].previousDATA.length
-   console.log(p)
+   console.log("i",i)
+   console.log("ind",ind)
 
   text +=
-    ` <div class=cardbox style=background-color:${color[index]}  > ` +
+    ` <div class=cardbox style=background-color:${color[i-1]}  > ` +
     `<p style = color:${textcolor}><strong>Device Name:</strong>` +
     entries[i][1].Dname +
     "</p>" +
@@ -80,7 +81,7 @@ for (let i = 1; i < entries.length; i++) {
   
   
   
- index = (index + 1) % 4;
+ ind = (ind + 1) % 4;
 }
 text += "</div>";
 
@@ -100,7 +101,7 @@ setTimeout(() => {
   console.log("fdsa", fdsa);
   setTimeout(() => {
     var allLocation = [];
-    var colors = ["blue", "purple", "red", "yellow"];
+    var colors = [ "blue", "purple", "yellow","red","pink"];
     var index = 0;
 
     const tileLayer = new TileLayer({
@@ -123,15 +124,17 @@ var markerFeature;
      }),
      style: new Style({
        image: new Icon({
-         src: `./assets/placeholder_${colors[index]}.png`,
+         src: `./assets/placeholder_${colors[i-1]}.png`,
          scale: 0.05,
        }),
      }),
    });
-
+ console.log("index", index);
+ console.log("indexi", i);
    allLocation.push(vectorLayer);
 
    index = (index + 1) % 4;
+    
  }
 const tileLayerGroup = new LayerGroup({
           title: "Year Comparison",
