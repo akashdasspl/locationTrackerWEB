@@ -58,36 +58,66 @@ for (let i = entries.length-1; i >0; i--) {
   textcolor = "black";
  }
 
- 
+ let keys = Object.keys(entries[i][1]);
 
-   let p = entries[i][1].previousDATA.length
-   console.log("i",i)
+
+   console.log("mujhe", keys[keys.length-2]);
    console.log("ind",ind)
 
-  text +=
-    ` <div class=cardbox style=background-color:${color[i-1]}  > ` +
-    `<p style = color:${textcolor}><strong>Device Name:</strong>` +
-    entries[i][1].Dname +
-    "</p>" +
-    `<p style = color:${textcolor} ><strong>IP Address:</strong>` +
-    entries[i][1].ip +
-    "</p>" +
-    `<p style = color:${textcolor}><strong>longitude:</strong>` +
-    entries[i][1].longitude +
-    "</p>" +
-    `<p style = color:${textcolor}><strong>latitude:</strong>` +
-    entries[i][1].latitude +
-    "</p>" +
-    `<p style = color:${textcolor}><strong>previous latitude:</strong>` +
-    entries[i][1].previousDATA[p - 1].latitude +
-    "</p>" +
-    `<p style = color:${textcolor}><strong>previous longitude:</strong>` +
-    entries[i][1].previousDATA[p - 1].longitude +
-    "</p>" +
-    `<p style = color:${textcolor}><strong>time:</strong>` +
-    entries[i][1].Currenttime +
-    "</p>" +
-    "</div>";
+   if (keys[keys.length - 2]=="previousDATA") {
+       let p = entries[i][1].previousDATA.length;
+      text +=
+        ` <div class=cardbox style=background-color:${color[i - 1]}  > ` +
+        `<p style = color:${textcolor}><strong>Device Name:</strong>` +
+        entries[i][1].Dname +
+        "</p>" +
+        `<p style = color:${textcolor} ><strong>IP Address:</strong>` +
+        entries[i][1].ip +
+        "</p>" +
+        `<p style = color:${textcolor}><strong>longitude:</strong>` +
+        entries[i][1].longitude +
+        "</p>" +
+        `<p style = color:${textcolor}><strong>latitude:</strong>` +
+        entries[i][1].latitude +
+        "</p>" +
+        `<p style = color:${textcolor}><strong>previous latitude:</strong>` +
+        entries[i][1].previousDATA[p - 1].latitude +
+        "</p>" +
+        `<p style = color:${textcolor}><strong>previous longitude:</strong>` +
+        entries[i][1].previousDATA[p - 1].longitude +
+        "</p>" +
+        `<p style = color:${textcolor}><strong>time:</strong>` +
+        entries[i][1].Currenttime +
+        "</p>" +
+        "</div>";
+   } else {
+     text +=
+       ` <div class=cardbox style=background-color:${color[i - 1]}  > ` +
+       `<p style = color:${textcolor}><strong>Device Name:</strong>` +
+       entries[i][1].Dname +
+       "</p>" +
+       `<p style = color:${textcolor} ><strong>IP Address:</strong>` +
+       entries[i][1].ip +
+       "</p>" +
+       `<p style = color:${textcolor}><strong>longitude:</strong>` +
+       entries[i][1].longitude +
+       "</p>" +
+       `<p style = color:${textcolor}><strong>latitude:</strong>` +
+       entries[i][1].latitude +
+       "</p>" +
+       `<p style = color:${textcolor}><strong>previous latitude:</strong>` +
+        ""+
+       "</p>" +
+       `<p style = color:${textcolor}><strong>previous longitude:</strong>` +
+        "" +
+       "</p>" +
+       `<p style = color:${textcolor}><strong>time:</strong>` +
+       entries[i][1].Currenttime +
+       "</p>" +
+       "</div>";
+   }
+
+ 
 
   
   
