@@ -10,7 +10,7 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "firebase": "^9.18.0",
+    "firebase": "^10.1.0",
     "ol": "latest",
     "react": "^18.2.0"
   }
